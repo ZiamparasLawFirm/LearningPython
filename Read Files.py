@@ -1,9 +1,17 @@
-import random
+import FreeSimpleGUI as sg
 
-a = int(input("Enter beginning: "))
-b = int(input("Enter ending: "))
+label1 = sg.Text("Enter feet: ")
+input_box1 = sg.InputText(tooltip="feet")
 
-x = random.randint(a, b)
+label2 = sg.Text("Enter inches: ")
+input_box2 = sg.InputText(tooltip="inches")
 
-print(x)
+add_button = sg.Button("Convert")
 
+window = sg.Window("Convert feet to meters",
+                   [[label1, input_box1],
+                    [label2, input_box2],
+                    [add_button]])
+
+window.read()
+window.close()
