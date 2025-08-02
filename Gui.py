@@ -13,5 +13,11 @@ window = sg.Window("Convert feet to meters",
                     [label2, input_box2],
                     [add_button]])
 
-window.read()
+event, values = window.read()
+feet = values[0]
+inches = values[1]
+
+meters = feet/inches
+
+print(event, values)
 window.close()
